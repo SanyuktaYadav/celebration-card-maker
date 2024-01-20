@@ -29,9 +29,10 @@ button {
 }
 
 .card-preview p {
-  font-size: 3rem;
+  font-size: 5rem;
   padding: 10px;
+  word-wrap: break-word;
   font-weight: 800;
-  color: blue;
+  color: rgb(51, 49, 49);
   text-align: center;
 }

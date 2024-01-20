@@ -5,9 +5,14 @@ const CardCreator = () => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
+  const [selectedImage, setSelectedImage] = useState('/default-background.jpg');
 
   const handleColorChange = (event) => {
     setBackgroundColor(event.target.value);
+  };
+
+  const handleImageChange = (event) => {
+    setSelectedImage(event.target.value);
   };
 
   const downloadAsImage = () => {
@@ -49,13 +54,12 @@ const CardCreator = () => {
           />
         </label>
         <label>
-          Background Color:
-          <select value={backgroundColor} onChange={handleColorChange}>
-            <option value="#ffffff">White</option>
-            <option value="#ffcccb">Light Pink</option>
-            <option value="#add8e6">Light Blue</option>
-            <option value="#98fb98">Light Green</option>
-            <option value="#f0e68c">Khaki</option>
+          Select Image:
+          <select value={selectedImage} onChange={handleImageChange}>
+            <option value="/celebrate.png" data-image="/celebrate.png">Celebrate 0</option>
+            <option value="/celebrate2.jpeg" data-image="/celebrate2.jpeg">Celebrate 01</option>
+            <option value="/celebrate2.png" data-image="/celebrate2.png">Celebrate 02</option>
+            <option value="/celebrate3.jpg" data-image="/celebrate3.jpg">Celebrate 03</option>
           </select>
         </label>
         <button onClick={downloadAsImage}>Download as Image</button>
@@ -65,7 +69,7 @@ const CardCreator = () => {
         id="card-wrapper"
         style={{
           backgroundColor,
-          backgroundImage: 'url("/celebrate.png")',
+          backgroundImage: `url(${selectedImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
