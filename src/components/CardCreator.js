@@ -4,12 +4,7 @@ import html2canvas from "html2canvas";
 const CardCreator = () => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
-  const [backgroundColor, setBackgroundColor] = useState("#ffffff");
-  const [selectedImage, setSelectedImage] = useState('/default-background.jpg');
-
-  const handleColorChange = (event) => {
-    setBackgroundColor(event.target.value);
-  };
+  const [selectedImage, setSelectedImage] = useState('/cake.png');
 
   const handleImageChange = (event) => {
     setSelectedImage(event.target.value);
@@ -56,7 +51,7 @@ const CardCreator = () => {
         <label>
           Select Image:
           <select value={selectedImage} onChange={handleImageChange}>
-            <option value="/celebrate.png" data-image="/celebrate.png">Celebrate 0</option>
+            <option value="/cake.png" data-image="/cake.png">Cake</option>
             <option value="/celebrate2.jpeg" data-image="/celebrate2.jpeg">Celebrate 01</option>
             <option value="/celebrate2.png" data-image="/celebrate2.png">Celebrate 02</option>
             <option value="/celebrate3.jpg" data-image="/celebrate3.jpg">Celebrate 03</option>
@@ -68,14 +63,13 @@ const CardCreator = () => {
         className="card-preview"
         id="card-wrapper"
         style={{
-          backgroundColor,
           backgroundImage: `url(${selectedImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <p>{name}</p>
-        <p>{message}</p>
+        <div className="message">{message}</div>
+        <div className="name">{name}</div>
       </div>
     </div>
   );
