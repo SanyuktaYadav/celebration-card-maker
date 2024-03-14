@@ -30,7 +30,7 @@ const CardCreator = () => {
 
   return (
     <div className="card-creator">
-      <h1>Celebration Card Creator</h1>
+      <h1>Greeting Card Creator</h1>
       <div className="input-container">
         <label>
           Message:
