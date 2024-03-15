@@ -22,7 +22,7 @@ const CardCreator = () => {
       .then((canvas) => {
         const link = document.createElement("a");
         link.href = canvas.toDataURL("image/png");
-        link.download = "card.png";
+        link.download = "Greeting Card.png";
         link.click();
       })
       .catch((error) => console.error("Error generating image:", error));
@@ -69,14 +69,14 @@ const CardCreator = () => {
               <option value="/cake.png" data-image="/cake.png">
                 Cake
               </option>
-              <option value="/celebrate2.jpeg" data-image="/celebrate2.jpeg">
-                Celebrate 01
+              <option value="/thankYou.png" data-image="/thankYou.png">
+                Thank you
               </option>
-              <option value="/celebrate2.png" data-image="/celebrate2.png">
-                Celebrate 02
+              <option value="/hearts.png" data-image="/hearts.png">
+                Hearts
               </option>
-              <option value="/celebrate3.jpg" data-image="/celebrate3.jpg">
-                Celebrate 03
+              <option value="/party.png" data-image="/party.png">
+                Party
               </option>
             </select>
           </label>
