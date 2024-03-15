@@ -1,30 +1,47 @@
 .card-creator {
-  max-width: 700px;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.input-container {
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-fields {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 2rem;
+  margin: 2.3rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 button {
   cursor: pointer;
-  padding: 10px;
-  background-color: #4caf50;
+  background-color: #394aa0;
   color: white;
   border: none;
   border-radius: 4px;
-  width: 100%;
-  margin: 2rem;
+  margin: 3rem;
+  padding: 1rem;
 }
 
+select,
+input {
+  padding: 1rem;
+  margin: 1rem;
+  width: 15rem;
+  font-size: 1rem;
+}
 .card-preview {
-  height: 900px;
-  width: 100%;
+  width: 30vw;
+  height: 80vh;
   background-repeat: no-repeat;
+  /* background-size: contain; */
   margin: 2rem;
 }
 
@@ -34,6 +51,7 @@ button {
   font-weight: 600;
   color: rgb(51, 49, 49);
   text-align: center;
+  overflow: hidden;
 }
 
 .message {
@@ -44,3 +62,14 @@ button {
   padding: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .card-creator {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-preview {
+    width: 80vw;
+    height: 80vh;
+  }
+}

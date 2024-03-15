@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 const CardCreator = () => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
-  const [selectedImage, setSelectedImage] = useState('/cake.png');
+  const [selectedImage, setSelectedImage] = useState("/cake.png");
 
   const handleImageChange = (event) => {
     setSelectedImage(event.target.value);
@@ -30,46 +30,58 @@ const CardCreator = () => {
 
   return (
     <div className="card-creator">
-      <h1>Greeting Card Creator</h1>
-      <div className="input-container">
-        <label>
-          Message:
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </label>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label>
-          Select Image:
-          <select value={selectedImage} onChange={handleImageChange}>
-            <option value="/cake.png" data-image="/cake.png">Cake</option>
-            <option value="/celebrate2.jpeg" data-image="/celebrate2.jpeg">Celebrate 01</option>
-            <option value="/celebrate2.png" data-image="/celebrate2.png">Celebrate 02</option>
-            <option value="/celebrate3.jpg" data-image="/celebrate3.jpg">Celebrate 03</option>
-          </select>
-        </label>
-        <button onClick={downloadAsImage}>Download as Image</button>
+      <div>
+        <h1>Greeting Card Creator</h1>
+        <div
+          className="card-preview"
+          id="card-wrapper"
+          style={{
+            backgroundImage: `url(${selectedImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="message">{message}</div>
+          <div className="name">{name}</div>
+        </div>
       </div>
-      <div
-        className="card-preview"
-        id="card-wrapper"
-        style={{
-          backgroundImage: `url(${selectedImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="message">{message}</div>
-        <div className="name">{name}</div>
+      <div className="input-container">
+        <div className="input-fields">
+          <label>
+            Message:
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </label>
+          <label>
+            Name:
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+          <label>
+            Select Image:
+            <select value={selectedImage} onChange={handleImageChange}>
+              <option value="/cake.png" data-image="/cake.png">
+                Cake
+              </option>
+              <option value="/celebrate2.jpeg" data-image="/celebrate2.jpeg">
+                Celebrate 01
+              </option>
+              <option value="/celebrate2.png" data-image="/celebrate2.png">
+                Celebrate 02
+              </option>
+              <option value="/celebrate3.jpg" data-image="/celebrate3.jpg">
+                Celebrate 03
+              </option>
+            </select>
+          </label>
+        </div>
+        <button onClick={downloadAsImage}>Download</button>
       </div>
     </div>
   );
