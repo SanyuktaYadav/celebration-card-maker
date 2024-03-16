@@ -64,7 +64,6 @@ input {
 
 @media only screen and (max-width: 768px) {
   .card-creator {
-    font-size: 1.5rem;
     flex-direction: column;
     justify-content: center;
   }
@@ -72,5 +71,9 @@ input {
   .card-preview {
     width: 80vw;
     height: 80vh;
+  }
+
+  .card-preview div{
+    font-size: 1.5rem;
   }
 }
