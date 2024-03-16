@@ -5,10 +5,15 @@ const CardCreator = () => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [selectedImage, setSelectedImage] = useState("/cake.png");
+  const [textColor, setTextColor] = useState("black");
 
   const handleImageChange = (event) => {
     setSelectedImage(event.target.value);
   };
+
+  const handleTextColorChange = (event) => {
+    setTextColor(event.target.value);
+  }
 
   const downloadAsImage = () => {
     const cardPreviewNode = document.getElementById("card-wrapper");
@@ -39,10 +44,15 @@ const CardCreator = () => {
             backgroundImage: `url(${selectedImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            overflow: "hidden"
           }}
         >
-          <div className="message">{message}</div>
-          <div className="name">{name}</div>
+          <div className="message" style={{ color: textColor }}>
+            {message}
+          </div>
+          <div className="name" style={{ color: textColor }}>
+            {name}
+          </div>
         </div>
       </div>
       <div className="input-container">
@@ -52,6 +62,7 @@ const CardCreator = () => {
             <input
               type="text"
               value={message}
+              maxLength={"160"}
               onChange={(e) => setMessage(e.target.value)}
             />
           </label>
@@ -60,8 +71,20 @@ const CardCreator = () => {
             <input
               type="text"
               value={name}
+              maxLength={"25"}
               onChange={(e) => setName(e.target.value)}
             />
+          </label>
+          <label>
+            Text Color:
+            <select value={textColor} onChange={handleTextColorChange}>
+              <option value="black">
+                Black
+              </option>
+              <option value="white">
+                White
+              </option>
+            </select>
           </label>
           <label>
             Select Image:
