@@ -32,10 +32,10 @@ button {
 
 select,
 input {
-  padding: 1rem;
-  margin: 1rem;
-  width: 15rem;
-  font-size: 1em;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 20rem;
+  font-size: 1rem;
 }
 .card-preview {
   width: 30vw;
