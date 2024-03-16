@@ -46,7 +46,7 @@ input {
 }
 
 .card-preview div {
-  font-size: 2.5em;
+  font-size: 2rem;
   word-wrap: break-word;
   font-weight: 600;
   color: rgb(51, 49, 49);
