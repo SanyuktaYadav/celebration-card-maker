@@ -3,7 +3,6 @@ import html2canvas from "html2canvas";
 
 const CardCreator = () => {
   const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
   const [selectedImage, setSelectedImage] = useState("/cake.png");
   const [textColor, setTextColor] = useState("black");
 
@@ -50,9 +49,6 @@ const CardCreator = () => {
           <div className="message" style={{ color: textColor }}>
             {message}
           </div>
-          <div className="name" style={{ color: textColor }}>
-            {name}
-          </div>
         </div>
       </div>
       <div className="input-container">
@@ -64,15 +60,6 @@ const CardCreator = () => {
               value={message}
               maxLength={"160"}
               onChange={(e) => setMessage(e.target.value)}
-            />
-          </label>
-          <label>
-            Name:
-            <input
-              type="text"
-              value={name}
-              maxLength={"25"}
-              onChange={(e) => setName(e.target.value)}
             />
           </label>
           <label>
